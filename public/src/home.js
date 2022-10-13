@@ -48,11 +48,14 @@ function getMostPopularBooks(books) {
   .map((bookUsed) => {
 return {name: bookUsed.title, count: bookUsed.borrows.length };
   })
-  .sort((a, b) => (a.count < b.count ? 1 : -1))
-  .slice(0, 5)
+  .sort(_sortBooksByCount)
+  .slice(0, 5);
 }
 
 
+function _sortBooksByCount(book1, book2) {
+  return book1.count < book2.count ? 1 : -1;
+}
  // most popular author 
  // popularity is determined by the times borrowed
   // return array with two keys
