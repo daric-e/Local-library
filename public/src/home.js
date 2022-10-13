@@ -38,7 +38,7 @@ function getMostCommonGenres (books) {
   let genreArray = Object.keys(commonGenreObj);
   let result = genreArray.map((genre)=>{
     return {name: genre, count: commonGenreObj[genre] };  
-  }).splice(0, 5).sort((a, b) => b.count - a.count);
+  }).splice(0, 5).sort(_sortBooksByCount);
   //console.log('RESULT', result);
   return result;
 };
