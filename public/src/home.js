@@ -22,8 +22,11 @@ function getBooksBorrowedCount(books) {
   return checkedOut;
 }
 
-//loop through books using .forEach
-
+// HELPER FUNCTION 
+// "_" prefix indicates private function 
+function _sortBooksByCount(book1, book2) {
+  return book1.count < book2.count ? 1 : -1;
+}
 
 function getMostCommonGenres (books) {
   let commonGenreObj = {};
@@ -53,9 +56,6 @@ return {name: bookUsed.title, count: bookUsed.borrows.length };
 }
 
 
-function _sortBooksByCount(book1, book2) {
-  return book1.count < book2.count ? 1 : -1;
-}
  // most popular author 
  // popularity is determined by the times borrowed
   // return array with two keys
